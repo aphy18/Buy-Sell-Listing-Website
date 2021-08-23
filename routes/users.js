@@ -21,5 +21,26 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+
+
+  // router.get("/register", (req, res) => {
+  //   return res.render('login', templateVars);
+  // });
+
+  // router.get("/mylist", (req, res) => {
+  //   return res.render('mylist', templateVars);
+  // });
+
+  // router.get("/newpost", (req,res) => {
+  //   return res.render('newpost', templateVars);
+  // })
+
+  // router.get("/search", (req,res) => {
+  //   return res.render('products', templateVars)
+  // })
+
+
+
   return router;
 };
