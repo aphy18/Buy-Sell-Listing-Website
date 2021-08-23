@@ -4,12 +4,12 @@ VALUES ('Aphason', 'Brillums', 'ap@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4
 ('Ahkila', 'Summers', 'sum@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6879001201, '133 Charollete Park', 'New York', 'United States', '5TY7W4', true),
 ('Maxy', 'Cooler', 'mag@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609967, '47 Ogton Drive', 'Montreal', 'Canada', '556HTG', false),
 ('Archie', 'Hotter', 'wat@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609872, '49 Ogton Drive', 'Montreal', 'Canada', '556HJG', false),
-('Condor', 'Phillips', 'art@hotmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 1168890023, '112 Gorey Road', 'Victoria', 'Canada', 'WR4BGH', false);
-('Usopp', 'Jenkins', 'uso@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 647677679, '256 Beverley Road', 'Detroit' 'United States', '98GTH6', false);
-('Marcus', 'Deandre', 'Marc@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 141333543, ' 67 Grayson District', 'Calgary', 'Canada', 'N5PLY6', false);
-('Mitchell', 'Zelpin', 'Mit@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 4565778765, '12 Saint Elijah Boulevard', 'Victoria', 'Canada', 'WGH1GH', false)
+('Condor', 'Phillips', 'art@hotmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 1168890023, '112 Gorey Road', 'Victoria', 'Canada', 'WR4BGH', false),
+('Usopp', 'Jenkins', 'uso@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 647677679, '256 Beverley Road', 'Detroit', 'United States', '98GTH6', false),
+('Marcus', 'Deandre', 'Marc@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 141333543, ' 67 Grayson District', 'Calgary', 'Canada', 'N5PLY6', false),
+('Mitchell', 'Zelpin', 'Mit@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 4565778765, '12 Saint Elijah Boulevard', 'Victoria', 'Canada', 'WGH1GH', false);
 
-INSERT INTO cars (name, year_created, colour, brand, description, price, isSold, owner_id)
+INSERT INTO cars (car_name, year_created, colour, brand, car_description, price, isSold, owner_id)
 VALUES ('honda civic', 2002, 'black', 'Honda', 'slowest car around', 5000, false, NULL),
 ('lamborghini turbo v3', 2019, 'blue', 'lamborghini', 'sonic fast with added turbo extensions', 1200000, false, NULL),
 ('maserati fusion', 2015, 'teel', 'maserati', 'perfect car for a friday night date', 200000, false, NULL),

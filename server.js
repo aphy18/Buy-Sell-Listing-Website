@@ -47,7 +47,7 @@ const userNewPost = require("./routes/newpost");
 // app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/login", userLogin);
 app.use("/api/logout", userLogout);
-app.use("/api/register", userRegister);
+app.use("/api/register", userRegister(db));
 app.use("/api/mylist", userMyList);
 app.use("/api/search", userSearch);
 app.use("/api/newpost", userNewPost);
