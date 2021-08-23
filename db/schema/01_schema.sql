@@ -1,4 +1,6 @@
+DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS messages CASCADE;
+DROP TABLE IF EXISTS conversations CASCADE;
 DROP TABLE IF EXISTS cars CASCADE;
 DROP TABLE IF EXISTS favourites CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
@@ -18,15 +20,6 @@ CREATE TABLE users (
   isAdmin BOOLEAN
 );
 
-CREATE TABLE favourites (
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  car_id INTEGER REFERNCES cars(id) ON DELETE CASCADE 
-);
-
---return a list of cars based on car_id
--- check for number of likes based on car_id
-
 CREATE TABLE cars (
   id SERIAL PRIMARY KEY NOT NULL,
   car_name VARCHAR(255) NOT NULL,
@@ -40,10 +33,20 @@ CREATE TABLE cars (
   owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE favourites (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE
+);
+
+--return a list of cars based on car_id
+-- check for number of likes based on car_id
+
+
 CREATE TABLE conversations (
   id SERIAL PRIMARY KEY,
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE messages (
@@ -52,15 +55,15 @@ CREATE TABLE messages (
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
-  created_at DATETIME
+  created_at TIMESTAMP
 );
 
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
-  ordered_at DATETIME,
+  ordered_at TIMESTAMP,
   car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE,
   buyer_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
-)
+  conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE
+);
 
 -- we dont need to have seller_id because owner_id is already a row in cars
