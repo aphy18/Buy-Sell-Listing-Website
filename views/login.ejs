@@ -16,10 +16,24 @@
 <%- include('partials/_header') %>
 
 
-<h1>login page</h1>
-<form action="" method="" >
-
-  <div class="">
+ <% if (locals.user) { %>
+    <p>You're signed in<p>
+ <% } else { %>
+  <form action="/api/login" method="POST"></form>
+    <h1>Login</h1>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" placeholder="email">
+    </div>
+    <div>
+      <label for="password">Password:</label> 
+      <input type="password" name="password" placeholder="password">
+    </div>
+    <button type="submit">Login</button>
+  </form>
+ <% } %>
+  
+  <!-- <div class="">
     <label for="email">Enter your email: </label>
     <input type="email" name="email" id="email" required>
   </div>
@@ -32,4 +46,6 @@
   </div>
 </form>
 </body>
-</html>
+</html> -->
+
+
