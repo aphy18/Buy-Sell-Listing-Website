@@ -3,10 +3,10 @@ const router  = express.Router();
 
 
 
-// GET /logout
+// GET /register
 router.get("/", (req, res) => {
 
-  return res.render('logout');
+  return res.render('register');
  });
 
  module.exports = router;
