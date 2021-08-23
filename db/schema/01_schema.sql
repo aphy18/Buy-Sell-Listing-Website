@@ -10,35 +10,57 @@ CREATE TABLE users (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
-  phone_number SMALLINT,
+  phone_number VARCHAR(50),
   street VARCHAR(255) NOT NULL,
   city VARCHAR(255) NOT NULL,
   country VARCHAR(255) NOT NULL,
   postal_code VARCHAR(50) NOT NULL,
-  isAdmin BOOLEAN 
+  isAdmin BOOLEAN
 );
 
 CREATE TABLE favourites (
   id SERIAL PRIMARY KEY,
-  likes INTEGER,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  car_id INTEGER REFERNCES cars(id) ON DELETE CASCADE 
 );
+
+--return a list of cars based on car_id
+-- check for number of likes based on car_id
 
 CREATE TABLE cars (
   id SERIAL PRIMARY KEY NOT NULL,
-  name VARCHAR(255) NOT NULL,
+  car_name VARCHAR(255) NOT NULL,
   year_created SMALLINT,
-  colour VARCHAR(50) NOT NULL,
+  photo VARCHAR(500),
+  colour VARCHAR(50),
   brand  VARCHAR(255) NOT NULL,
-  description VARCHAR(255) NOT NULL,
-  price SMALLINT,
+  car_description VARCHAR(255) NOT NULL,
+  price INTEGER,
   isSold BOOLEAN,
   owner_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE conversations (
+  id SERIAL PRIMARY KEY,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+);
+
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY,
-  message VARCHAR(255) NOT NULL,
+  message VARCHAR(1000) NOT NULL,
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
+  created_at DATETIME
 );
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  ordered_at DATETIME,
+  car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE,
+  buyer_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  conversation_id INTEGER REFERENCES conversations(id) ON DELETE CASCADE,
+)
+
+-- we dont need to have seller_id because owner_id is already a row in cars
