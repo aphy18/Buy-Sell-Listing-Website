@@ -36,7 +36,6 @@ app.use(cookieSession({
   keys: ['abcdefghijklmnopqr123456789'],
 }));
 
-
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 // const usersRoutes = require("./routes/users");
@@ -68,7 +67,11 @@ app.use("/api/newpost", userNewPost);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 app.get("/", (req, res) => {
-  res.render("index");
+  //req.session['userID']
+  console.log('Im here', req.session['userID']);
+  const templateVars = { id: req.session['userID']}
+  // if(req.session)
+   res.render("index", templateVars );
 });
 
 

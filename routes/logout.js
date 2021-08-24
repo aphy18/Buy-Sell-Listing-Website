@@ -5,8 +5,9 @@ const router  = express.Router();
 
 // GET /logout
 router.get("/", (req, res) => {
-
-  return res.render('logout');
+  //clearing the session
+  req.session = null;
+  return res.redirect('/');
  });
 
  module.exports = router;

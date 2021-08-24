@@ -27,6 +27,7 @@ const router  = express.Router();
      amountOfOptions +=1;
    }
 
+<<<<<<< HEAD
    if (options.minimum_price_per_night) {
      queryParams.push(options.minimum_price_per_night);
      queryString += amountOfOptions > 0 ? 'AND ' : 'WHERE ';
@@ -59,6 +60,10 @@ const router  = express.Router();
 
    // 5
    console.log(queryString, queryParams);
+=======
+  return res.render('search',{'id':req.session.userID});
+ });
+>>>>>>> 55bb3054b01b2548b1048a59859362a4b3658b78
 
    // 6
    return pool.query(queryString, queryParams).then((res) => res.rows);
