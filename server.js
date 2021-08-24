@@ -46,6 +46,7 @@ const userRegister = require("./routes/register");
 const userMyList = require("./routes/mylist");
 const userSearch = require("./routes/search");
 const userNewPost = require("./routes/newpost");
+const userHomePage = require("./routes/index");
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
@@ -56,6 +57,7 @@ app.use("/api/register", userRegister(db));
 app.use("/api/mylist", userMyList);
 app.use("/api/search", userSearch(db));
 app.use("/api/newpost", userNewPost);
+app.use("/", userHomePage(db));
 
 
 
@@ -66,13 +68,7 @@ app.use("/api/newpost", userNewPost);
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-app.get("/", (req, res) => {
-  //req.session['userID']
-  console.log('Im here', req.session['userID']);
-  const templateVars = { id: req.session['userID']}
-  // if(req.session)
-   res.render("index", templateVars );
-});
+
 
 
 
