@@ -1,22 +1,15 @@
+
 const express = require('express');
 const router  = express.Router();
 
-
-
-// GET /search
-router.get('/search', (req, res) => {
-  database.getAllProperties(req.query, 20)
-  .then(properties => res.send({properties}))
-  .catch(e => {
-    console.error(e);
-    res.send(e)
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    console.log('Im in search page');
+    return res.render('search',{'id':req.session.userID});
   });
-});
-
-
-router.get("/", (req, res) => {
-
-  return res.render('search',{'id':req.session.userID});
- });
-
- module.exports = router;
+  router.post("/", (req, res) => {
+    console.log('Im in search page using post');
+    return res.render('search',{'id':req.session.userID});
+  });
+  return router;
+};

@@ -54,7 +54,7 @@ app.use("/api/login", userLogin(db));
 app.use("/api/logout", userLogout);
 app.use("/api/register", userRegister(db));
 app.use("/api/mylist", userMyList);
-app.use("/api/search", userSearch);
+app.use("/api/search", userSearch(db));
 app.use("/api/newpost", userNewPost);
 
 
