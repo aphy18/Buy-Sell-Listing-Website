@@ -7,13 +7,36 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-
-
   </head>
-
   <body>
     <%- include('partials/_header') %>
-<h2>search page</h2>
+    <div class="search">
+    <form action="/api/search" method="POST" ></form>
+    <h1>Search Car</h1>
+    <div>
+      <label for="model">Model</label>
+      <input type="text" name="model" placeholder="model">
+    </div>
+    <div>
+      <label for="brand">Brand</label>
+      <input type="text" name="brand" placeholder="brand">
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="text" name="price" placeholder="price">
+      </div>
+      <div>
+          <label for="year">Year</label>
+          <input type="text" name="year" placeholder="year">
+        </div>
+        <div>
+            <label for="color">Color</label>
+            <input type="text" name="color" placeholder="color">
+          </div>
+
+
+    <button type="submit">Search</button>
+  </form>
+</div>
 </body>
 </html>
