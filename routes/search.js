@@ -8,7 +8,7 @@ const router  = express.Router();
   return res.render('search',{'id':req.session.userID});
   });
 
-  router.post("/", (req,res) => {
+  router.post("/", (req, res) => {
     console.log("test");
     const user = req.body;
     console.log(req.body.model);
