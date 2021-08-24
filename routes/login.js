@@ -47,11 +47,6 @@ module.exports = (db) => {
           const user = result.rows[0];
           console.log('res rows zero --------------->', result.rows[0]);
           if (bcrypt.compareSync(password, user.password)) {
-<<<<<<< HEAD
-            //res.send({user: {name: user.name, email: user.email, id: user.id}});
-            // return res.send(user);
-=======
->>>>>>> 86a0301d5a8fd4aac3cbb59c87b0939175cb2e77
             return res.redirect('/');
           }
         }
