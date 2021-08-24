@@ -17,7 +17,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.post("/login", (req,res) => {
+  router.post("/api/login", (req,res) => {
     const email = req.body.password;
     const password = req.body.password;
     login(email, password)
@@ -26,13 +26,15 @@ module.exports = (db) => {
           res.send({error: "error"});
           return;
         }
+        console.log(req.body.password);
         req.session.userID = user.userID;
         res.send({user: {name: user.name, email: user.email, id: user.id}});
+
         res.redirect("/api/index");
       })
       .catch(e => res.send(e));
   });
-  
+
   return router;
 };
 

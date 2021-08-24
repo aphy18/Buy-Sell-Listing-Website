@@ -1,4 +1,5 @@
 const express = require('express');
+const { checkout } = require('./logout');
 const router  = express.Router();
 
 
@@ -9,10 +10,17 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    //console.log('request', req);
-    //console.log('response', res);
+
     const user = req.body;
-    db.query(`
+    console.log(req.body.email);
+
+    db.query(`SELECT email from users where users.email = $1;`,[user.email])
+    .then(result => {
+      if(result.rows[0]){
+        return res.send(`Email already exists <html><a href='http://localhost:8080/api/register'> Try again with a different email address</a></html>`);
+
+      } else {
+        db.query(`
       INSERT INTO users (first_name, last_name, email, password, phone_number, street, city, country, postal_code)
       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
       RETURNING *; `, [user.firstName, user.lastName, user.email, user.password, user.phoneNumber, user.street, user.city, user.country, user.postalCode])
@@ -25,6 +33,12 @@ module.exports = (db) => {
       console.log(err.message);
       res.send('There is an error');
     });
+      }
+
+    })
+
+
+
 
   });
 
