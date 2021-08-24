@@ -19,20 +19,26 @@
  <% if (locals.user) { %>
     <p>You're signed in<p>
  <% } else { %>
+<<<<<<< HEAD
+  <div class="login">
+  <form action="/api/login" method="POST" ></form>
+=======
   <form action="/api/login" method="POST">
+>>>>>>> 50399a3d3a54912ccfb6e3d0be485ddda0e4589f
     <h1>Login</h1>
     <div>
       <label for="email">Email:</label>
       <input type="email" name="email" placeholder="email">
     </div>
     <div>
-      <label for="password">Password:</label> 
+      <label for="password">Password:</label>
       <input type="password" name="password" placeholder="password">
     </div>
     <button type="submit">Login</button>
   </form>
+</div>
  <% } %>
-  
+
   <!-- <div class="">
     <label for="email">Enter your email: </label>
     <input type="email" name="email" id="email" required>
@@ -44,9 +50,12 @@
   <div class="">
     <input type="submit" value="Submit">
   </div>
-</form>
+</form> -->
+
+
+
 </body>
-</html> -->
+</html>
 
 
   
