@@ -1,5 +1,65 @@
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark navbg-header navbg-menu">
+<header class="">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="/"><h2>Car Buy-Sell<em> Website</em></h2></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <% if(locals.id == null) {%>
+            <a class="nav-link" href="/api/login">Login
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/api/register">Register</a>
+          </li>
+          <%} else {%>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/logout">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/mylist">Mylist</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/addCar">AddCar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/search">Search</a>
+            </li>
+
+          <%} %>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- Banner Starts Here -->
+<div class="main-banner header-text" id="top">
+  <div class="Modern-Slider">
+    <!-- Item -->
+    <div class="item item-1">
+      <div class="img-fill">
+          <div class="text-content">
+            <h6>Buy your Dream Car on this Plateform!</h6>
+            <h4>Now No Need to go to Dealers Shop!<br> Find Your Car</h4>
+            <p>Best Plateform to Look for a Car....</p>
+            <a href="/api/search" class="filled-button">Cars</a>
+          </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--Old Header-->
+<!--   <nav class="navbar navbar-expand-md navbar-dark navbg-header navbg-menu">
     <a class="navbar-brand" href="/">Buy/Sell</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,4 +80,4 @@
       </div>
     </div>
   </nav>
-</header>
+</header>-->
