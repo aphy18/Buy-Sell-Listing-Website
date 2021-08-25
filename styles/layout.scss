@@ -603,6 +603,7 @@ ul.slick-dots {
 
 .services {
 	margin-top: 140px;
+  display: flex;
 }
 
 .service-item img {
@@ -661,7 +662,8 @@ ul.slick-dots {
 }
 
 .fun-facts .container {
-	position: relative;
+
+  position: relative;
 	z-index: 2;
 }
 
@@ -1137,7 +1139,13 @@ footer .contact-form button.filled-button:hover {
 	color: #fff;
 }
 
-
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .page-heading {
 	text-align: center;
 	background-image: url(../images/banner-image-1-1920x500.jpg);
