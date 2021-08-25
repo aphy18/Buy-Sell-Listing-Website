@@ -11,7 +11,8 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
 
-    const model = req.body.model;
+    const carName = req.body.carName;
+    console.log("carName:", carName);
     const brand = req.body.brand;
     const minprice = req.body.minprice;
     const maxprice = req.body.maxprice
@@ -25,10 +26,10 @@ module.exports = (db) => {
     SELECT cars.*
     FROM cars `;
 
-    if (model) {
-      queryParams.push(model);
-      queryString += amountOfOptions > 0 ? 'AND ' : 'WHERE ';
-      queryString += `cars.model = $${queryParams.length} `;
+    if (carName) {
+      queryParams.push(carName);
+      queryString += amountOfOptions > 0 ? ' AND ' : 'WHERE ';
+      queryString += `cars.car_name = $${queryParams.length} `;
       amountOfOptions += 1;
     }
 
