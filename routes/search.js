@@ -5,7 +5,8 @@ module.exports = (db) => {
 
   // GET /search
   router.get("/", (req, res) => {
-    return res.render('search', { 'id': req.session.userID });
+    const templateVars = { id: req.session['userID'], arrayofcars: undefined}
+    return res.render('search', templateVars);
   });
 
   router.post("/", (req, res) => {
@@ -69,8 +70,14 @@ module.exports = (db) => {
 
     db.query(queryString, queryParams)
       .then(result => {
-        console.log(result.rows);
-        return result.rows;
+
+        const templateVars = { id: req.session['userID'], arrayofcars: result.rows}
+
+        console.log('tempvars',templateVars);
+        return res.render("search", templateVars );
+
+       /*  console.log(result.rows);
+        return result.rows; */
       });
   });
 
