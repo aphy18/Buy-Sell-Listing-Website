@@ -50,26 +50,51 @@ body {
     padding: 0;
   }
   form {
+    display: inline;
     button{
       border:none;
       background-color: transparent;
       font-size: 0.8em;
       padding: 0px 1px;
+
       .fa-comments, .fa-heart{
         color:#aba6a6;
       }
       .fa-comments:hover{
         color:teal;
       }
-      .fa-heart:hover{
-        color:#e23737;
-      }
+
     }
 
-    display: inline;
   }
 
+  .fa-heart{
+    color: #aba6a6;
+  }
+  .clicked{
+    color:#e23737;
+    fill:#e23737;
+  }
+  #fav-icon{
+    border: none;
+    background: transparent;
+
+    padding: 0;
+    display: inline;
+
+    font-size: 0.8em;
+
+  }
+
+  .fa-heart:hover{
+    color:#e23737;
+  }
+
+
 }
+
+
+
 
 /* Feature Car related*/
 /*

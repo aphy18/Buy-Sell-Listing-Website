@@ -6,20 +6,26 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
 
     //console.log('Im here', req.session['userID']);
-    db.query(`SELECT * from cars;`)
+    db.query('SELECT * FROM favourites WHERE favourites.user_id = $1;', [req.session.userID])
     .then(result => {
-      //console.log('Im inside the get index', result.rows);
+      const fav = result.rows.map(ele => {
+        return ele.car_id;
+      });
 
-      const templateVars = { id: req.session['userID'], arrayofcars: result.rows}
+      db.query(`SELECT * from cars;`)
+      .then(result => {
 
-      console.log('tempvars',templateVars);
-      return res.render("index", templateVars );
+        const templateVars = { id: req.session['userID'], arrayofcars: result.rows, fav}
+
+        //console.log('tempvars',templateVars);
+        return res.render("index", templateVars );
+
+      })
     })
   });
 
-
   router.post("/", (req, res) => {
-    console.log('Im in search page using post');
+    console.log('Im in home page using post');
     return res.render('index',{'id':req.session.userID});
   });
   return router;
