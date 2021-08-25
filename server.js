@@ -55,7 +55,7 @@ const userMessages = require('./routes/messages');
 app.use("/api/login", userLogin(db));
 app.use("/api/logout", userLogout);
 app.use("/api/register", userRegister(db));
-app.use("/api/mylist", userMyList);
+app.use("/api/mylist", userMyList(db));
 app.use("/api/search", userSearch(db));
 app.use("/api/addCar", userAddCar(db));
 app.use("/", userHomePage(db));
