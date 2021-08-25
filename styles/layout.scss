@@ -94,17 +94,16 @@ body {
 // HOME PAGE HEADER RELATED
 
 
-
-
-/* Feature Car related*/
-/*
-.row {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+#preloader .jumper {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  position: absolute;
+  margin: auto;
+  width: 50px;
+  height: 50px;
 }
 
 /* Banner Style */
@@ -625,6 +624,7 @@ ul.slick-dots {
 
 .services {
 	margin-top: 140px;
+  display: flex;
 }
 
 .service-item img {
@@ -683,7 +683,8 @@ ul.slick-dots {
 }
 
 .fun-facts .container {
-	position: relative;
+
+  position: relative;
 	z-index: 2;
 }
 
@@ -1159,7 +1160,13 @@ footer .contact-form button.filled-button:hover {
 	color: #fff;
 }
 
-
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .page-heading {
 	text-align: center;
 	background-image: url(../images/banner-image-1-1920x500.jpg);
