@@ -14,14 +14,43 @@
 
   <body>
     <%- include('partials/_header') %>
-
+  <div class="container">
   <h1>My list</h1>
   <div>
     <pre>
-      <%=JSON.stringify(fav) %>
+
+      <!-- <%=JSON.stringify(fav) %> -->
     </pre>
+    <% for(let list of fav){ %>
+      <div class = "row displaycars">
+
+
+
+
+        <div class = "col-md-4 pad">
+          <img src="<%= list.photo %>" style="width:100%;"/>
+
+        </div>
+        <div class = "col-md-8" data-id="<%= list.car_id %>">
+
+          <p><%= list.car_name %></p>
+          <p><%= list.brand %></p>
+          <p><%= list.colour %></p>
+
+          <p>Car Description</p>
+          <p><%= list.car_name %></p>
+
+          <p><%= list.price %></p>
+
+
+
+        </div>
+
+    </div>
+    <br/>
+   <%}%>
 
   </div>
-
+</div>
   </body>
   </html>
