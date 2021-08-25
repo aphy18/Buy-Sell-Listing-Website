@@ -20,14 +20,15 @@
 
   <body>
 
-  <%- include('partials/_header') %>
-  <div class="container">
+    <%- include('partials/_header') %>
+
+    <div class="container">
     <h1>List of products!</h1>
 
     <%for(let car of arrayofcars){%>
     <div class = "row displaycars">
 
-        <!-- <p><%= car.photo %></p> -->
+
 
 
         <div class = "col-md-4 pad">
@@ -58,7 +59,6 @@
     <%}%>
 
   </div>
-
 
 
 
