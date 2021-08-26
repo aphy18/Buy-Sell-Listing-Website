@@ -57,13 +57,13 @@ CREATE TABLE conversations (
   
 );
 
--- CREATE TABLE messages (
---   id SERIAL PRIMARY KEY,
---   message VARCHAR(1000) NOT NULL,
---   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
---   recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
---   created_at TIMESTAMP
--- );
+CREATE TABLE messages (
+  id SERIAL PRIMARY KEY,
+  message VARCHAR(1000) NOT NULL,
+  sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  created_at TIMESTAMP
+);
 
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
