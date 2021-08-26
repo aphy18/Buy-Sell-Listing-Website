@@ -26,7 +26,13 @@
       <p><%= sellerMessage3 %></p>
     </div>
 
-   
+   <form action="/api/messages/:<%= partner %>" method="POST">
+
+    <label for="text">Send Message</label>
+    <input type="text" placeholder="message" name="text">
+    <button type="submit">Send</button>
+
+  </form>
 
 
 </body>

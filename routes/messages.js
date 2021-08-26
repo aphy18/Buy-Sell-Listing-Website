@@ -1,5 +1,23 @@
 const express = require('express');
 const router  = express.Router();
+// install dotenv
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+// install twilio
+
+const client = require('twilio')(accountSid, authToken);
+
+// client.messages
+//   .create({
+//     body:'This is text message',
+//     from: '+15046366808',
+//     to: '+16476793802'
+//   })
+//   .then(message => console.log(message))
+//   .catch(error => console.log(error));
+
+
 
 module.exports = (db) => {
   router.get('/', (req,res) => {
@@ -35,23 +53,15 @@ module.exports = (db) => {
         if (!userID) {
           return res.send("You must be logged in to see messages.<a href=http://localhost:8080/api/login> Please try again</a>");
         }
-        console.log('------> result.rows', result.rows);
-        console.log('userID -->', userID);
-        console.log('partnerID -->', parseInt(partnerID));
-        console.log('---------->', partner);
+        // console.log('------> result.rows', result.rows);
+        // console.log('userID -->', userID);
+        // console.log('partnerID -->', parseInt(partnerID));
+        // console.log('---------->', partner);
         
         const templateVars = { id: userID, partner, buyerMessage1, buyerMessage2, buyerMessage3, sellerMessage1, sellerMessage2, sellerMessage3 };
         return res.render('msgid', templateVars);
       });
-
-    router.post('/:user_id', (req,res) => {
-
-    });
   });
-
-
   return router;
-
 };
-  
-//calling the database will always be an async operation
+
