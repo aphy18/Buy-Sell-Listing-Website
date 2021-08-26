@@ -1,4 +1,5 @@
-```<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,7 +48,7 @@
               <div class="col-md-4">
                 <div class="service-item">
                   <img src="<%= car.photo %>" alt="">
-                  <div class="down-content">
+                  <div class="down-content" data-id="<%= car.id %>">
                     <h4>
                       <%= car.car_name %>
                     </h4>
@@ -64,14 +65,11 @@
                         <%= car.colour %> &nbsp;&nbsp;&nbsp;
                           <i class="fa fa-cog"></i>
                           <%= car.description %> &nbsp;&nbsp;&nbsp;
-                          <i class="fas fa-heart <%= fav.includes(car.id) ? 'clicked' : '' %>" id='fav-icon'></i>
-                          <i><form method="GET" action="/api/messages/">
-                            <button id='com-icon'><i class="fas fa-comments"></i></button>
-                          </form></i>
-
                     </p>
-
-
+                    <form method="GET" action="/api/messages/">
+                      <button id='com-icon'><i class="fas fa-comments"></i></button>
+                    </form>
+                     <i class="fas fa-heart <%= fav.includes(car.id) ? 'clicked' : '' %>" id='fav-icon'></i>
                     <a href="/api/search" class="filled-button">View More</a>
 
                 </div>
@@ -84,19 +82,9 @@
     </div>
 
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-   <!-- Bootstrap core JavaScript -->
-   <script src="vendor/jquery/jquery.min.js"></script>
-   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
- <!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
- <!-- Additional Scripts -->
- <script src="..lib/custom.js"></script>
- <!-- <script src="../lib/owl.js"></script>
-    <script src="../lib/slick.js"></script>
-    <script src="../lib/accordions.js"></script> -->
+
+
 
 </html>
 

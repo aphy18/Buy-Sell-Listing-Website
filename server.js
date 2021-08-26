@@ -47,7 +47,8 @@ const userMyList = require("./routes/mylist");
 const userSearch = require("./routes/search");
 const userAddCar = require("./routes/addCar");
 const userHomePage = require("./routes/index");
-const userMessages = require('./routes/messages');
+const userMessageList = require("./routes/messages");
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
@@ -59,7 +60,7 @@ app.use("/api/mylist", userMyList(db));
 app.use("/api/search", userSearch(db));
 app.use("/api/addCar", userAddCar(db));
 app.use("/", userHomePage(db));
-app.use("/api/messages", userMessages(db));
+app.use("/api/messages", userMessageList(db));
 // Note: mount other resources here, using the same pattern above
 // Home page
 // Warning: avoid creating more routes in this file!

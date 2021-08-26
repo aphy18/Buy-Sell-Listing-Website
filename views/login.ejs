@@ -19,8 +19,16 @@
  <% if (locals.user) { %>
     <p>You're signed in<p>
  <% } else { %>
+
+  <div class="section-heading">
+    <h2><em>Login</em></h2>
+  </div>
+
+
+
+
   <form action="/api/login" method="POST">
-    <h1>Login</h1>
+
     <div>
       <label for="email">Email:</label>
       <input type="email" name="email" placeholder="email">
