@@ -40,8 +40,8 @@ module.exports = (db) => {
 
     db.query(queryString, queryParams)
 
-  .then(result => result.rows[0])
-  .catch(error => error.message);
+      .then(result => result.rows[0])
+      .catch(error => error.message);
 
   });
 
