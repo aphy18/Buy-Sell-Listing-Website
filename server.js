@@ -45,7 +45,7 @@ const userLogout = require("./routes/logout")
 const userRegister = require("./routes/register");
 const userMyList = require("./routes/mylist");
 const userSearch = require("./routes/search");
-const userNewPost = require("./routes/newpost");
+const userAddCar = require("./routes/addCar");
 const userHomePage = require("./routes/index");
 const userMessageList = require("./routes/messages");
 
@@ -56,24 +56,15 @@ const userMessageList = require("./routes/messages");
 app.use("/api/login", userLogin(db));
 app.use("/api/logout", userLogout);
 app.use("/api/register", userRegister(db));
-app.use("/api/mylist", userMyList);
+app.use("/api/mylist", userMyList(db));
 app.use("/api/search", userSearch(db));
-app.use("/api/newpost", userNewPost);
+app.use("/api/addCar", userAddCar(db));
 app.use("/", userHomePage(db));
-app.use("/api/messages", userMessageList(db));
-
-
-
-
-
+app.use("/api/messages", userMessages(db));
 // Note: mount other resources here, using the same pattern above
-
-
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
