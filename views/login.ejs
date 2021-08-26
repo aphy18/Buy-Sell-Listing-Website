@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Buy/Sell</title>
-  </head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <body>
+  <title>Buy/Sell</title>
+</head>
 
-<%- include('partials/_header') %>
+<body>
+  <%- include('partials/_header') %>
+    <div class="addcar-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Login<em>Form</em></h2>
+              <span>Login Here</span>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="addCar">
 
-
- <% if (locals.user) { %>
-    <p>You're signed in<p>
- <% } else { %>
-
-  <div class="section-heading">
-    <h2><em>Login</em></h2>
-  </div>
-
-
-
-
-  <form action="/api/login" method="POST">
-
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" name="email" placeholder="email">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" name="password" placeholder="password">
-    </div>
-    <button type="submit">Login</button>
-  </form>
-</div>
- <% } %>
+              <% if (locals.user) { %>
+                <p>You're signed in
+                <p>
+                  <% } else { %>
 
 
+                    <form action="/api/login" method="POST">
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+
+                            <label for="email">Email:</label>
+                            <input type="email" name="email" class="form-control" placeholder="email">
+                          </fieldset>
+                        </div>
+                      </div>
+
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" class="form-control" placeholder="password">
+                          </fieldset>
+                        </div>
+                      </div>
+                      <button type="submit" class="border-button" class="form-control">Login</button>
+                    </form>
+            </div>
+            <% } %>
+
+              <div class="sub-footer">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <p>
+                        Copyright © 2021 Akhila, Chandni, Aphy
+                      </p>
+                    </div>
+                  </div>
+                </div>
 </body>
 </html>
-
-

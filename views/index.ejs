@@ -23,16 +23,6 @@
 
   <body>
     <%- include('partials/_header') %>
-     <!-- ***** Preloader Start ***** -->
- <!-- <div id="preloader">
-  <div class="jumper">
-      <div></div>
-      <div></div>
-      <div></div>
-  </div>
-</div> -->
-
-
     <div class="container">
       <div class="services">
         <div class="container">
@@ -42,9 +32,7 @@
                 <h2>Featured <em>Cars</em></h2>
               </div>
             </div>
-
             <%for(let car of arrayofcars){%>
-
               <div class="col-md-4">
                 <div class="service-item">
                   <img src="<%= car.photo %>" alt="">
@@ -71,7 +59,6 @@
                     </form>
                      <i class="fas fa-heart <%= fav.includes(car.id) ? 'clicked' : '' %>" id='fav-icon'></i>
                     <a href="/api/search" class="filled-button">View More</a>
-
                 </div>
               </div>
           </div>
@@ -80,11 +67,20 @@
         </div>
     </div>
     </div>
-
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+                Copyright © 2021 Akhila, Chandni, Aphy
+            </p>
+          </div>
+        </div>
+      </div>
   </body>
-
-
-
-
 </html>
 

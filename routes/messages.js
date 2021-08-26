@@ -24,7 +24,7 @@ module.exports = (db) => {
     db.query(`SELECT first_name, last_name, id FROM users`)
       .then(result => {
         const userID = req.session.userID;
-        
+
         if (!userID) {
           res.send("You must be logged in to see messages.<a href=http://localhost:8080/api/login> Please try again</a>");
         }
@@ -57,7 +57,7 @@ module.exports = (db) => {
         // console.log('userID -->', userID);
         // console.log('partnerID -->', parseInt(partnerID));
         // console.log('---------->', partner);
-        
+
         const templateVars = { id: userID, partner, buyerMessage1, buyerMessage2, buyerMessage3, sellerMessage1, sellerMessage2, sellerMessage3 };
         return res.render('msgid', templateVars);
       });
