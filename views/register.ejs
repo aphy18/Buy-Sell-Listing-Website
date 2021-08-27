@@ -14,6 +14,115 @@
 
   <body>
     <%- include('partials/_header') %>
+    <div class="searchcar-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-heading">
+              <h2>Register <em> Here!</em></h2>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="searchCar">
+              <form action="/api/register" method="POST" class="">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label for="first name">First Name: </label>
+                      <input type="text" name="firstName" class="form-control" id="first_name" required>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label for="last name">Last Name: </label>
+                      <input type="text" name="lastName" class="form-control" id="last_name" required>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label for="email">Email: </label>
+                      <input type="text" name="email" class="form-control" id="email" required>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label for="phone">Phone Number: </label>
+                      <input type="tel" name="phoneNumber" class="form-control" id="phone" required>
+                    </fieldset>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+                      <label for="street">Street: </label>
+                      <input type="text" name="street" class="form-control" id="street" required>
+                    </fieldset>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <fieldset>
+
+                        <label for="city">city: </label>
+                        <input type="text" name="city" class="form-control" id="city" required>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+                        <label for="country">country: </label>
+                        <input type="text" name="country" class="form-control" id="country" required>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+                        <label for="postalCode">postal code: </label>
+                        <input type="text" name="postalCode" class="form-control" id="postalcode" required>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+                        <label for="password">password: </label>
+                        <input type="password" name="password" class="form-control" id="password" required>
+                      </div>
+                    </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <fieldset>
+                        <input type="submit" class="border-button" class="form-control" value="Subscribe!">
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sub-footer">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p>
+                      Copyright © 2021 Akhila, Chandni, Aphy
+                    </p>
+                  </div>
+                </div>
+              </div>
+<!--
 <h1>register page</h1>
 <div class="register">
 <form action="/api/register" method="POST" class="">
@@ -58,6 +167,6 @@
     <input type="submit" value="Subscribe!">
   </div>
 </form>
-</div>
+</div> -->
   </body>
 </html>
