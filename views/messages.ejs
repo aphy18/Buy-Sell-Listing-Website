@@ -9,25 +9,32 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-  <title>Buy/Sell</title>
 </head>
 
 <body>
 
   <%- include('partials/_header') %>
-    <div class="col-md-12">
-      <div class="section-heading">
-        <h2>Messages</h2>
-      </div>
-    </div>
+  <div class="searchcar-form">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Messages</h2>
+          </div>
+        </div>
+
     <% for (user of userStrings) { %>
       <a href="/api/messages/<%= user.id%>">
         <p>
           <%= user.first_name %>, <%= user.last_name %>
         </p>
-      </a>
+      </a> <br>
       <% } %>
+    </div>
+  </div>
+  <div>
+
+  </div>
         <div class="sub-footer">
           <div class="container">
             <div class="row">
@@ -39,5 +46,6 @@
             </div>
           </div>
         </div>
+
 </body>
 </html>

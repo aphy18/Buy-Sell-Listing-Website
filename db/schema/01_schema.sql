@@ -1,10 +1,7 @@
-DROP TABLE IF EXISTS orders CASCADE;
 DROP TABLE IF EXISTS messages CASCADE;
-DROP TABLE IF EXISTS conversations CASCADE;
 DROP TABLE IF EXISTS cars CASCADE;
 DROP TABLE IF EXISTS favourites CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
-
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -19,11 +16,6 @@ CREATE TABLE users (
   postal_code VARCHAR(50) NOT NULL,
   isAdmin BOOLEAN
 );
-
-
-
---return a list of cars based on car_id
--- check for number of likes based on car_id
 
 CREATE TABLE cars (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -44,32 +36,14 @@ CREATE TABLE favourites (
   car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE
 );
 
-CREATE TABLE conversations (
-  id SERIAL PRIMARY KEY,
-  buyer_message_1 VARCHAR(1000),
-  buyer_message_2 VARCHAR(1000),
-  buyer_message_3 VARCHAR(1000),
-  seller_message_1 VARCHAR(1000),
-  seller_message_2 VARCHAR(1000),
-  seller_message_3 VARCHAR(1000),
-  buyer_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  seller_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-  
-);
-
 CREATE TABLE messages (
   id SERIAL PRIMARY KEY,
-  message VARCHAR(1000) NOT NULL,
+  message VARCHAR(1000),
   sender_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   recipient_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   created_at TIMESTAMP
 );
 
-CREATE TABLE orders (
-  id SERIAL PRIMARY KEY,
-  ordered_at TIMESTAMP,
-  car_id INTEGER REFERENCES cars(id) ON DELETE CASCADE,
-  buyer_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-);
+
 
 -- we dont need to have seller_id because owner_id is already a row in cars

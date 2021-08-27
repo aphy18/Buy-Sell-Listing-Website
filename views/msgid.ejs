@@ -18,15 +18,16 @@
    
 
     <div>
-      <p><%= buyerMessage1 %></p>
-      <p><%= sellerMessage1 %> </p>
-      <p><%= buyerMessage2 %></p>
-      <p><%= sellerMessage2 %></p>
-      <p><%= buyerMessage3 %></p>
-      <p><%= sellerMessage3 %></p>
+
+      <% for (let message of messages) { %>
+        <p><%= message.message %></p>
+     <% } %>
+    
+     
+
     </div>
 
-   <form action="/api/messages/:<%= partner %>" method="POST">
+   <form action="/api/messages/<%= partnerID %>" method="POST">
 
     <label for="text">Send Message</label>
     <input type="text" placeholder="message" name="text">
