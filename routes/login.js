@@ -29,6 +29,8 @@ module.exports = (db) => {
           const user = result.rows[0];
           if (bcrypt.compareSync(password, user.password)) {
             req.session.userID = user.id;
+            req.session.userType = user.isadmin;
+            req.session.issold = user.issold;
             return res.redirect('/');
           } else {
             res.send('Email or password is invalid<html><a href=http://localhost:8080/api/login> Please try again</a></html>');
@@ -47,7 +49,11 @@ module.exports = (db) => {
 };
 
 router.get("/", (req, res) => {
-  return res.render('login',{'id':req.session.userID});
+  if (req.session.userID) {
+    return res.send(`You have already logged In! You cannot go to this page again.  <html><a href='http://localhost:8080/'> Click here to go back</a></html>`);
+  } else {
+    return res.render('login',{'id':req.session.userID});
+  }
 });
 
 

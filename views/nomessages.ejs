@@ -15,7 +15,13 @@
 
 <%- include('partials/_header') %>
 
-   <p>No message history present</p>
+<form action="/api/messages/<%= partnerID %>" method="POST">
+
+  <label for="text">Send Message</label>
+  <input type="text" placeholder="message" name="text">
+  <button type="submit">Send</button>
+
+</form>
     
 
 </body>

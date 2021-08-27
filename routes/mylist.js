@@ -18,7 +18,7 @@ module.exports = (db) => {
       });
 
   });
-  
+
   router.post("/", (req, res) => {
     console.log('Im in myslist page using post',req.body);
     const collect_itemid = req.body.itemid;
@@ -42,8 +42,6 @@ module.exports = (db) => {
         })
       }
     })
-
-
     .catch((err) => {
       console.log('we are getting error in mylist post');
       console.log(err.message);

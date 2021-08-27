@@ -1,13 +1,13 @@
 INSERT INTO users (first_name, last_name, email, password, phone_number, street, city, country, postal_code, isAdmin)
-VALUES ('Aphason', 'Brillums', 'ap@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 5475387741, '435 Ossignton Av', 'Toronto', 'Canada', 'M5RT48', true),
-('Chandi', 'Checkers', 'cha@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 7765321235, '86 Downview Road', 'Calgary', 'Canada', '1MV321', true),
-('Ahkila', 'Summers', 'sum@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 5046366808, '133 Charollete Park', 'New York', 'United States', '5TY7W4', true),
-('Maxy', 'Cooler', 'mag@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609967, '47 Ogton Drive', 'Montreal', 'Canada', '556HTG', false),
-('Archie', 'Hotter', 'wat@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609872, '49 Ogton Drive', 'Montreal', 'Canada', '556HJG', false),
-('Condor', 'Phillips', 'art@hotmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 1168890023, '112 Gorey Road', 'Victoria', 'Canada', 'WR4BGH', false),
-('Usopp', 'Jenkins', 'uso@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 647677679, '256 Beverley Road', 'Detroit', 'United States', '98GTH6', false),
-('Marcus', 'Deandre', 'Marc@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 141333543, ' 67 Grayson District', 'Calgary', 'Canada', 'N5PLY6', false),
-('Mitchell', 'Zelpin', 'Mit@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 4565778765, '12 Saint Elijah Boulevard', 'Victoria', 'Canada', 'WGH1GH', false);
+VALUES ('Aphason', 'Brillums', 'ap@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '435 Ossignton Av', 'Toronto', 'Canada', 'M5RT48', true),
+('Chandi', 'Checkers', 'cha@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '86 Downview Road', 'Calgary', 'Canada', '1MV321', true),
+('Ahkila', 'Summers', 'sum@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '133 Charollete Park', 'New York', 'United States', '5TY7W4', true),
+('Maxy', 'Cooler', 'mag@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '47 Ogton Drive', 'Montreal', 'Canada', '556HTG', false),
+('Archie', 'Hotter', 'wat@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '49 Ogton Drive', 'Montreal', 'Canada', '556HJG', false),
+('Condor', 'Phillips', 'art@hotmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '112 Gorey Road', 'Victoria', 'Canada', 'WR4BGH', false),
+('Usopp', 'Jenkins', 'uso@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '256 Beverley Road', 'Detroit', 'United States', '98GTH6', false),
+('Marcus', 'Deandre', 'Marc@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, ' 67 Grayson District', 'Calgary', 'Canada', 'N5PLY6', false),
+('Mitchell', 'Zelpin', 'Mit@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 15046366808, '12 Saint Elijah Boulevard', 'Victoria', 'Canada', 'WGH1GH', false);
 
 INSERT INTO cars (photo, car_name, year_created, colour, brand, car_description, price, isSold, owner_id)
 VALUES ('/images/1.jpg','honda civic', 2002, 'black', 'Honda', 'slowest car around', 5000, false, 1),

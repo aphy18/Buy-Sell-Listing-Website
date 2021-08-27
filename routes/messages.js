@@ -13,7 +13,7 @@ module.exports = (db) => {
     db.query(`SELECT first_name, last_name, id FROM users`)
       .then(result => {
         const userID = req.session.userID;
-        
+
         if (!userID) {
           res.send("You must be logged in to see messages.<a href=http://localhost:8080/api/login> Please try again</a>");
         }
@@ -26,15 +26,15 @@ module.exports = (db) => {
   router.get('/:user_id', (req,res) => {
     const userID = req.session.userID;
     const partnerID = req.params.user_id;
-    const msg = req.body.text;
     db.query(`SELECT message FROM messages WHERE ((messages.recipient_id = $1 AND messages.sender_id = $2) OR (messages.sender_id = $1 AND messages.recipient_id = $2)) ORDER BY messages.created_at`, [userID, partnerID])
     
       .then(result => {
         if (result.rows.length === 0) {
-          return res.render('nomessages');
+          const templateVars = { partnerID };
+          return res.render('nomessages', templateVars);
         }
         const messages = result.rows;
-        console.log('user ---->', messages);
+       
 
         if (!userID) {
           return res.send("You must be logged in to see messages.<a href=http://localhost:8080/api/login> Please try again</a>");
@@ -50,6 +50,7 @@ module.exports = (db) => {
       .then(result => {
         const userPhone = result.rows[0].phone_number;
         const msg = req.body.text;
+        console.log(result.rows);
         client.messages
           .create({
             body: msg,
