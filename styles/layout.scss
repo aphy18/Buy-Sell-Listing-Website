@@ -95,6 +95,16 @@ form {
   display:none;
 
 }
+.issoldchange{
+  display: block;
+  background-color: #bb3333;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding:5px 10px;
+  text-align:center;
+}
 .issold{
   display:block;
   display: inline;
@@ -702,6 +712,7 @@ ul.slick-dots {
 .service-item .down-content {
 	background-color: #f7f7f7;
 	padding: 30px 15px;
+  margin-bottom: 10px;
 }
 
 .service-item .down-content h4 {

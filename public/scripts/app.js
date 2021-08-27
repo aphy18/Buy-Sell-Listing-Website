@@ -60,7 +60,7 @@ $(document).ready(function() {
     // console.log(sol);
     const itemid = $(this).parent().attr('data-id');
     console.log('sold', itemid);
-    const sol = $(this).siblings('.isunsold').toggleClass('issold');
+    $(this).siblings('.isunsold').toggleClass('issoldchange');
     $(this).remove();
     $.ajax({
       method: 'POST',
