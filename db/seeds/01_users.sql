@@ -1,7 +1,7 @@
 INSERT INTO users (first_name, last_name, email, password, phone_number, street, city, country, postal_code, isAdmin)
 VALUES ('Aphason', 'Brillums', 'ap@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 5475387741, '435 Ossignton Av', 'Toronto', 'Canada', 'M5RT48', true),
 ('Chandi', 'Checkers', 'cha@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 7765321235, '86 Downview Road', 'Calgary', 'Canada', '1MV321', true),
-('Ahkila', 'Summers', 'sum@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6879001201, '133 Charollete Park', 'New York', 'United States', '5TY7W4', true),
+('Akhila', 'Summers', 'sum@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6879001201, '133 Charollete Park', 'New York', 'United States', '5TY7W4', true),
 ('Maxy', 'Cooler', 'mag@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609967, '47 Ogton Drive', 'Montreal', 'Canada', '556HTG', false),
 ('Archie', 'Hotter', 'wat@gmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 6475609872, '49 Ogton Drive', 'Montreal', 'Canada', '556HJG', false),
 ('Condor', 'Phillips', 'art@hotmail.com', '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 1168890023, '112 Gorey Road', 'Victoria', 'Canada', 'WR4BGH', false),

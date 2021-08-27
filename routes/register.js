@@ -7,8 +7,12 @@ const bcrypt = require('bcrypt');
 module.exports = (db) => {
   // GET /register
   router.get("/", (req, res) => {
+    if(req.session.userID){
+      return res.send(`You have already registered! You cannot go to this page.  <html><a href='http://localhost:8080/'> Click here to go back</a></html>`);
+    } else {
 
-    return res.render('register', {'id':req.session.userID} );
+      return res.render('register', {'id':req.session.userID} );
+    }
   });
 
   router.post("/", (req, res) => {
