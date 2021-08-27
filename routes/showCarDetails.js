@@ -62,32 +62,32 @@ module.exports = (db) => {
 
 
   });
-  // router.post('/iscancel',(req,res)=>{
 
-  //   if(req.session.userID){
-  //     db.query(`UPDATE cars SET isSold = 'false' WHERE id = $1;`, [soldtext])
-  //     .then(result => {
-  //       //console.log(result);
-  //       res.send('working in progress Cancel');
-  //     })
-  //   }
-  // });
 
   router.get("/:carid", (req, res) => {
     console.log('req.params', req.params);
     const itemid = req.params.carid;
     db.query(`SELECT * FROM cars WHERE id = $1;`, [itemid])
     .then(result=>{
-      const display = result.rows[0];
-      console.log('result',result);
-      res.render('showCarDetails', display);
+      //const display = result.rows[0];
+      const templateVars =  result.rows;
+
+      console.log('ddddddddddddresult',result);
+      res.render('showCarDetails',{templateVars,id:req.session.userID} );
     })
     .catch(e=>{
       res.send(e);
     })
 
   });
-
+//   app.get("/articles", function(req, res){
+//     var articles = [
+//             {title: "Man Discovers Different Opinion", author: "Reginald", date: "9/2/45"},
+//             {title: "Tigers Aren't Great Pets", author: "Simon", date: "4/13/95"},
+//             {title: "Eating Cake for Breakfast", author: "Katie", date: "8/20/13"}
+//         ];
+//     res.render("articles.ejs", {articles: articles})
+// });
 
 
 

@@ -11,13 +11,14 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     console.log('inside get mylist', req.body, res.body);
     db.query('SELECT * FROM favourites LEFT JOIN cars ON (cars.id = favourites.car_id) WHERE favourites.user_id = $1;', [req.session.userID])
-    .then(result => {
-      const fav = result.rows;
+      .then(result => {
+        const fav = result.rows;
 
-      return res.render('mylist', {'id':req.session.userID, fav} );
-    })
+        return res.render('mylist', {'id':req.session.userID, fav} );
+      });
 
   });
+
   router.post("/", (req, res) => {
     console.log('Im in myslist page using post',req.body);
     const collect_itemid = req.body.itemid;
@@ -41,8 +42,6 @@ module.exports = (db) => {
         })
       }
     })
-
-
     .catch((err) => {
       console.log('we are getting error in mylist post');
       console.log(err.message);

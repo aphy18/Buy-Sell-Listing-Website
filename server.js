@@ -11,6 +11,7 @@ const app        = express();
 const morgan     = require('morgan');
 const cookieSession    = require('cookie-session');
 
+
 // PG database client/connection setup
 const { Pool } = require('pg');
 const dbParams = require('./lib/db.js');
@@ -49,6 +50,8 @@ const userAddCar = require("./routes/addCar");
 const userHomePage = require("./routes/index");
 const userMessages = require('./routes/messages');
 const showCarDetails = require('./routes/showCarDetails');
+const userMessageList = require("./routes/messages");
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // app.use("/api/users", usersRoutes(db));
@@ -63,6 +66,7 @@ app.use("/", userHomePage(db));
 app.use("/api/messages", userMessages(db));
 app.use("/api/showcars", showCarDetails(db));
 
+app.use("/api/messages", userMessageList(db));
 // Note: mount other resources here, using the same pattern above
 // Home page
 // Warning: avoid creating more routes in this file!

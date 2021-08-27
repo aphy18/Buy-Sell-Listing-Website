@@ -23,7 +23,6 @@
 
   <body>
     <%- include('partials/_header') %>
-
     <div class="container">
       <div class="services">
         <div class="container">
@@ -33,10 +32,8 @@
                 <h2>Featured <em>Cars</em></h2>
               </div>
             </div>
-
-
             <%for(let car of arrayofcars){%>
-              <div class="col-md-4" >
+              <div class="col-md-4">
                 <div class="service-item">
                   <img src="<%= car.photo %>" alt="">
                   <div class="down-content" data-id="<%= car.id %>">
@@ -65,7 +62,6 @@
                     <form method="GET" action="/api/messages/">
                       <button id='com-icon'><i class="fas fa-comments"></i></button>
                     </form>
-
                      <i class="fas fa-heart <%= fav.includes(car.id) ? 'clicked' : '' %>" id='fav-icon'></i>
                     <a href="/api/showcars/<%=car.id %>" class="filled-button">View More</a>
 
@@ -89,8 +85,21 @@
         </div>
     </div>
     </div>
-
+         </div>
+        </div>
+      </div>
+    </div>
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+                Copyright © 2021 Akhila, Chandni, Aphy
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
 </html>
+

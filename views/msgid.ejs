@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <title>Buy/Sell</title>
+  </head>
+
+  <body>
+
+<%- include('partials/_header') %>
+
+   
+
+    <div>
+      <p><%= buyerMessage1 %></p>
+      <p><%= sellerMessage1 %> </p>
+      <p><%= buyerMessage2 %></p>
+      <p><%= sellerMessage2 %></p>
+      <p><%= buyerMessage3 %></p>
+      <p><%= sellerMessage3 %></p>
+    </div>
+
+   <form action="/api/messages/:<%= partner %>" method="POST">
+
+    <label for="text">Send Message</label>
+    <input type="text" placeholder="message" name="text">
+    <button type="submit">Send</button>
+
+  </form>
+
+
+</body>
+</html> 
+

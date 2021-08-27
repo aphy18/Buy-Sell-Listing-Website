@@ -16,7 +16,7 @@ body {
 }
 
 // for forms
- .search, .login, .register,.addCar {
+ .search, .register {
   max-width: 400px;
   display: flex;
   flex-direction: column;
@@ -30,10 +30,10 @@ body {
 
 
 
-  textarea, select, input, label {
+ /*  textarea, select, input, label {
     margin: 5px 5px;
     width: 100%;
-  }
+  } */
 }
 
 .displaycars{
@@ -627,27 +627,59 @@ ul.slick-dots {
 
 
 
-/* Request Form */
 
-.request-form {
+
+/* addcar Form */
+
+.addCar {
 	background-color: #a4c639;
 	padding: 40px 0px;
 	color: #fff;
+
+
 }
 
-.request-form h4 {
+.addCar h4 {
 	font-size: 22px;
 	font-weight: 600;
 }
 
-.request-form span {
+.addCar span {
 	font-size: 15px;
 	font-weight: 400;
 	display: inline-block;
 	margin-top: 10px;
 }
 
-.request-form a.border-button {
+.addCar a.border-button {
+	margin-top: 12px;
+	float: right;
+}
+
+
+/* searchcar Form */
+
+.searchCar {
+	background-color: #a4c639;
+	padding: 40px 0px;
+	color: #fff;
+
+
+}
+
+.searchCar h4 {
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.searchCar span {
+	font-size: 15px;
+	font-weight: 400;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.searchCar a.border-button {
 	margin-top: 12px;
 	float: right;
 }
@@ -884,7 +916,7 @@ ul.slick-dots {
 
 /* Call Back Style */
 
-.callback-services {
+.addcar-services {
 	border-top: 1px solid #eee;
 	padding-top: 140px;
 }
@@ -894,28 +926,75 @@ ul.slick-dots {
 	padding: 140px 0px;
 }
 
-.contact-us .contact-form {
+.contact-us .addCar {
 	background-color: transparent!important;
 	padding: 0!important;
 }
-
-.callback-form {
+.searchcar-form{
+  margin-top: 140px;
+}
+.addcar-form  {
 	margin-top: 140px;
+
 }
 
-.callback-form .contact-form {
+.addcar-form .addCar {
 	background-color: #a4c639;
 	padding: 60px;
 	border-radius: 5px;
-	text-align: center;
+
+}
+.searchcar-form .searchCar {
+	background-color: #a4c639;
+	padding: 60px;
+	border-radius: 5px;
+
 }
 
-.callback-form .contact-form input {
+.addcar-form .addCar input {
 	border-radius: 20px;
 	height: 40px;
 	line-height: 40px;
 	display: inline-block;
 	padding: 0px 15px;
+	color:rgb(27, 27, 25);
+	font-size: 13px;
+	text-transform: none;
+	box-shadow: none;
+	border: none;
+	margin-bottom: 35px;
+}
+.searchcar-form .searchCar input{	border-radius: 20px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	padding: 0px 15px;
+	color:rgb(20, 20, 18);
+	font-size: 13px;
+	text-transform: none;
+	box-shadow: none;
+	border: none;
+	margin-bottom: 35px;}
+
+.addcar-form .addCar  input:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+.searchcar-form .searchCar input:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+
+.searchcar-form .searchCar textarea{
+  border-radius: 20px;
+	height: 120px;
+	max-height: 200px;
+	min-height: 120px;
+	display: inline-block;
+	padding: 15px;
 	color: #6a6a6a;
 	font-size: 13px;
 	text-transform: none;
@@ -924,13 +1003,7 @@ ul.slick-dots {
 	margin-bottom: 35px;
 }
 
-.callback-form .contact-form input:focus {
-	outline: none;
-	box-shadow: none;
-	border: none;
-}
-
-.callback-form .contact-form textarea {
+.addcar-form .addCar textarea {
 	border-radius: 20px;
 	height: 120px;
 	max-height: 200px;
@@ -945,27 +1018,41 @@ ul.slick-dots {
 	margin-bottom: 35px;
 }
 
-.callback-form .contact-form textarea:focus {
+.addcar-form .addCar textarea:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
+.searchcar-form .searchCar textarea:focus {
 	outline: none;
 	box-shadow: none;
 	border: none;
 }
 
-.callback-form .contact-form ::-webkit-input-placeholder { /* Edge */
+.addcar-form .addCar ::-webkit-input-placeholder { /* Edge */
   color: #aaa;
 }
-.callback-form .contact-form :-ms-input-placeholder { /* Internet Explorer 10-11 */
+.searchcar-form .searchCar ::-webkit-input-placeholder { /* Edge */
   color: #aaa;
 }
-.callback-form .contact-form ::placeholder {
+.addcar-form  .addCar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aaa;
+}
+.searchcar-form .searchCar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #aaa;
+}
+.addcar-form .addCar ::placeholder {
+  color: #aaa;
+}
+.searchcar-form .searchCar ::placeholder {
   color: #aaa;
 }
 
-.callback-form .contact-form button.border-button {
+.addcar-form .addCar button.border-button {
 	background-color: transparent;
 	color: #fff;
 	border: 2px solid #fff;
-	font-size: 13px;
+	font-size: 19px;
 	text-transform: uppercase;
 	font-weight: 700;
 	padding: 10px 28px;
@@ -978,12 +1065,33 @@ ul.slick-dots {
 	cursor: pointer;
 }
 
-.callback-form .contact-form button.border-button:hover {
+.searchcar-form .searchCar button.border-button {
+	background-color: transparent;
+	color: #fff;
+	border: 2px solid #fff;
+	font-size: 19px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 10px 28px;
+	border-radius: 30px;
+	display: inline-block;
+	transition: all 0.3s;
+	outline: none;
+	box-shadow: none;
+	text-shadow: none;
+	cursor: pointer;
+}
+
+
+.addcar-form .addCar button.border-button:hover {
 	background-color: #fff;
 	color: #a4c639;
 }
-
-.contact-us .contact-form button.filled-button {
+.searchcar-form .searchCarbutton.border-button:hover {
+	background-color: #fff;
+	color: #a4c639;
+}
+.contact-us .addCar button.filled-button {
 	background-color: #a4c639;
 	color: #fff;
 	border: none;
@@ -1000,12 +1108,31 @@ ul.slick-dots {
 	cursor: pointer;
 }
 
-.contact-us .contact-form button.filled-button:hover {
+.searchcar-form .searchCar button.filled-button {
+	background-color: #a4c639;
+	color: #fff;
+	border: none;
+	font-size: 13px;
+	text-transform: uppercase;
+	font-weight: 700;
+	padding: 12px 30px;
+	border-radius: 30px;
+	display: inline-block;
+	transition: all 0.3s;
+	outline: none;
+	box-shadow: none;
+	text-shadow: none;
+	cursor: pointer;
+}
+.contact-us .addCar button.filled-button:hover {
 	background-color: #fff;
 	color: #a4c639;
 }
 
-
+.searchcar-form .searchCar button.filled-button:hover {
+	background-color: #fff;
+	color: #a4c639;
+}
 
 /* Partners Style */
 
@@ -1180,9 +1307,11 @@ footer .contact-form button.filled-button:hover {
 /* Sub-footer Style */
 
 .sub-footer {
+  margin-top: 5;
 	background-color: #343434;
 	text-align: center;
 	padding: 25px 0px;
+  margin-top: 33px;
 }
 
 .sub-footer p {
@@ -1514,3 +1643,10 @@ footer .contact-form button.filled-button:hover {
 h5 a { color: #a4c639; }
 h5 a:hover { color: inherit; }
 
+.row {
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}

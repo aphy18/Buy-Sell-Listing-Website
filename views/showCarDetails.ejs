@@ -24,12 +24,34 @@
   <body>
     <%- include('partials/_header') %>
     <div class="container">
+      <br/>
       <div class="row">
-        <div class="col-md-5">
+        <% for(var i=0; i<templateVars.length; i++){ %>
+          <!-- <h1><%= templateVars[i].car_name %></h1>
+          <h3><%= templateVars[i].photo %></h3>
+          <h4><%= templateVars[i].price %></h4> -->
 
+        <div class="col-md-5">
+          <img src="<%= templateVars[i].photo %>" alt="" style='width:100%'>
         </div>
         <div class="col-md-7">
-
+          <h4>
+            <%= templateVars[i].car_name %>
+          </h4>
+          <p><%= templateVars[i].brand %></p>
+          <p><%= templateVars[i].colour %></p><p><%= templateVars[i].brand %></p><p><%= templateVars[i].price %></p><p><%= templateVars[i].description %></p>
+        </div>
+        <%}%>
+      </div>
+    </div>
+    <div class="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+                Copyright © 2021 Akhila, Chandni, Aphy
+            </p>
+          </div>
         </div>
       </div>
     </div>
