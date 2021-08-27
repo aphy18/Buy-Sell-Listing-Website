@@ -43,7 +43,7 @@ module.exports = (db) => {
       .then(result => result.rows[0])
       .catch(error => error.message);
 
-      res.redirect('/');
+      // res.redirect('/');
   });
 
   return router;

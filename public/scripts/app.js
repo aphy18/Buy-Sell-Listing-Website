@@ -52,16 +52,16 @@ $(document).ready(function() {
 
   // $(".issold").on('click',function(event) {
   $('.issold').click(function(event){
-    //console.log('---event', event);
+
     if(!event){
       return;
     }
     event.preventDefault();
-    // console.log(sol);
     const itemid = $(this).parent().attr('data-id');
     console.log('sold', itemid);
     $(this).siblings('.isunsold').toggleClass('issoldchange');
     $(this).remove();
+
     $.ajax({
       method: 'POST',
       url: '/api/showcars/issold',
@@ -69,13 +69,36 @@ $(document).ready(function() {
         itemid
       },
       success: function(response){
+        //console.log(response);
 
       },
       error: function(err){
-          alert('You dont have access to mark it as sold');
-          console.log(err);
+        alert('You dont have access to mark it as sold');
+
       }
     });
   });
+
+  // $('.unsold').click(function(event)  {
+  //   event.preventDefault();
+  //   const itemid = $(this).parent().attr('data-id');
+  //   $(this).siblings('.unsold').toggleClass('unsoldchange');
+  //   $(this).remove();
+  //   $.ajax({
+  //     method: 'POST',
+  //     url: '/api/showcars/cancel',
+  //     data: {
+  //       itemid
+  //     },
+  //     success: function(response){
+  //       console.log(response);
+
+  //     },
+  //     error: function(err){
+  //       alert('You dont have access to mark it as sold');
+  //       console.log(err);
+  //     }
+  //   });
+  // });
 
 });

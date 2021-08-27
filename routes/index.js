@@ -4,7 +4,7 @@ const router  = express.Router();
 module.exports = (db) => {
   //GET "/"
   router.get("/", (req, res) => {
-
+    console.log('here-------');
     //console.log('Im here', req.session['userID']);
     db.query('SELECT * FROM favourites WHERE favourites.user_id = $1;', [req.session.userID])
     .then(result => {
@@ -12,7 +12,7 @@ module.exports = (db) => {
         return ele.car_id;
       });
 
-      db.query(`SELECT * from cars;`)
+      db.query(`SELECT * from cars ORDER BY id ASC;`)
       .then(result => {
 
         const templateVars = { id: req.session['userID'], arrayofcars: result.rows, fav, userType: req.session.userType }

@@ -37,10 +37,10 @@
                 <div class="service-item">
                   <img src="<%= car.photo %>" alt="">
                   <div class="down-content" data-id="<%= car.id %>">
-                     <% if (car.issold){%>
-                      <p class="isunsold">Sold</p>
+
+                      <p class="isunsold <%= car.issold ? 'issoldchange' : '' %>">Sold</p>
                        <!-- <h5>Sold</h5> -->
-                     <%}%>
+
 
                     <h4>
                       <%= car.car_name %>
@@ -67,13 +67,15 @@
 
                     <% if (id && userType) {%>
                       <button class='deletecar' type="submit">delete</button>
-                      <button class="issold" type='submit'>Sold</button>
-                      <!-- <% if (!car.issold){%>
+
+                      <!-- <button class="issold" type='submit'>Sold</button> -->
+                      <% if (!car.issold){%>
                         <button class = 'issold' type="submit">Sold</button>
-                      <%}%> -->
+                      <%}%>
+                      <!-- <% if (car.issold)%>
+                        <button class = "unsoldchange <%= car.issold ? 'unsold' : '' %>" type= "submit">Cancel</button>
 
-
-                    <%}%>
+                    <%}%> -->
 
 
                 </div>
