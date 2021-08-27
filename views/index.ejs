@@ -34,11 +34,17 @@
               </div>
             </div>
 
+
             <%for(let car of arrayofcars){%>
               <div class="col-md-4" >
                 <div class="service-item">
                   <img src="<%= car.photo %>" alt="">
                   <div class="down-content" data-id="<%= car.id %>">
+                     <% if (car.issold){%>
+                      <p class="isunsold">Sold</p>
+                       <!-- <h5>Sold</h5> -->
+                     <%}%>
+
                     <h4>
                       <%= car.car_name %>
                     </h4>
@@ -61,11 +67,24 @@
                     </form>
 
                      <i class="fas fa-heart <%= fav.includes(car.id) ? 'clicked' : '' %>" id='fav-icon'></i>
-                    <a href="/api/search" class="filled-button">View More</a>
+                    <a href="/api/showcars/<%=car.id %>" class="filled-button">View More</a>
+
+                    <% if (id && userType) {%>
+                      <button class='deletecar' type="submit">delete</button>
+                      <button class="issold" type='submit'>Sold</button>
+                      <!-- <% if (!car.issold){%>
+                        <button class = 'issold' type="submit">Sold</button>
+                      <%}%> -->
+
+
+                    <%}%>
+
+
                 </div>
               </div>
           </div>
           <%}%>
+
         </div>
         </div>
     </div>

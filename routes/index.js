@@ -15,9 +15,9 @@ module.exports = (db) => {
       db.query(`SELECT * from cars;`)
       .then(result => {
 
-        const templateVars = { id: req.session['userID'], arrayofcars: result.rows, fav}
+        const templateVars = { id: req.session['userID'], arrayofcars: result.rows, fav, userType: req.session.userType }
 
-        //console.log('tempvars',templateVars);
+        console.log('+++tempvars',templateVars);
         return res.render("index", templateVars );
 
       })
